@@ -17,7 +17,7 @@ function Register() {
   e.preventDefault();
 
   const response = await fetch(
-    "http://localhost:5001/api/todo/register",
+    `${import.meta.env.VITE_SERVER_URL}/api/todo/register`,
     {
       method: "POST",
       headers: {

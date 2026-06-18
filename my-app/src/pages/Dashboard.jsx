@@ -11,7 +11,7 @@ function Dashboard() {
   const [page, setPage] = useState(1);
 
   const handleToggle = async (item) => {
-    const response = await fetch(`http://localhost:5001/api/todo/${item._id}`, {
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/todo/${item._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "Application/json",
@@ -31,7 +31,7 @@ function Dashboard() {
 
   const currentTodos = todo.slice((page - 1) * 5, page * 5);
   const getTodo = async () => {
-    const response = await fetch("http://localhost:5001/api/todo/my-todos", {
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/todo/my-todos`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -57,7 +57,7 @@ function Dashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:5001/api/todo/create", {
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/todo/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ function Dashboard() {
   };
 
   const handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:5001/api/todo/${id}`, {
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/todo/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ function Dashboard() {
 
     if (!updatedTask) return;
 
-    const response = await fetch(`http://localhost:5001/api/todo/${id}`, {
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/api/todo/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
