@@ -13,9 +13,7 @@ function Header() {
     <header className="bg-white shadow fixed w-full">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        <h1 className="text-2xl font-bold text-black">
-          Todo App
-        </h1>
+        <img src="/image.png" alt="" className='h-10' />
 
         <nav className="space-x-6">
           

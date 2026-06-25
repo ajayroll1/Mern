@@ -17,7 +17,7 @@ function Register() {
   e.preventDefault();
 
   const response = await fetch(
-    `${import.meta.env.VITE_SERVER_URL}/api/todo/register`,
+    `${import.meta.env.VITE_SERVER_URL}/api/auth/register`,
     {
       method: "POST",
       headers: {
@@ -43,12 +43,13 @@ function Register() {
 
 
   return (
-    <>
+  <div className='flex items-center justify-center h-screen w-full'>
+     <div className="flex flex-col items-center justify-center w-full">
       <h1 className='text-3xl font-bold text-center mt-10 mb-6'>
         Register
       </h1>
 
-      <form onSubmit={handleSubmit} className='max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg'>
+      <form onSubmit={handleSubmit} className='max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg  w-full'>
 
         <div className='mb-4'>
           <label className='block mb-2 font-medium'>
@@ -103,7 +104,8 @@ function Register() {
 
 
       </form>
-    </>
+     </div> 
+  </div>
   )
 }
 
