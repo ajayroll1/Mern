@@ -14,7 +14,7 @@ import cors from "cors";
 
 dotenv.config();
 const app = express();
-app.use(cors({origin:'http://localhost:5173'}));
+app.use(cors());
 app.use(express.json());
 app.use("/api/todo",router);
 app.use("/api/auth",authRouter);
