@@ -33,10 +33,9 @@ function Login() {
       setMessage(data.message);
 
       if (data.success) {
-        // Context API login
         login(data.token);
 
-        // Redirect to Dashboard
+        
         navigate("/dashboard", { replace: true });
       }
     } catch (error) {

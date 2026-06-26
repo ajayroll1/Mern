@@ -65,7 +65,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 px-6 pb-20">
+        <section className="max-w-6xl mx-auto grid md:grid-cols-5 gap-6 px-6 pb-20">
           <div className="bg-white p-6 rounded-lg shadow hover:bg-blue-200">
             <h2 className="text-xl font-semibold mb-2">Create Tasks</h2>
             <p>Create and organize your daily tasks.</p>
@@ -84,6 +84,10 @@ function Home() {
           <div className="bg-white p-6 rounded-lg shadow hover:bg-blue-200">
             <h2 className="text-xl font-semibold mb-2">Secure Access</h2>
             <p>Protected with JWT Authentication.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow hover:bg-blue-200">
+            <h2 className="text-xl font-semibold mb-2">AWS Deployment</h2>
+            <p>CI/CD Integrated</p>
           </div>
         </section>
       </main>
