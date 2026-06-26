@@ -56,7 +56,7 @@ function Home() {
           <p className="text-gray-600 text-lg mb-8">
             Organize your daily work, track progress, and boost productivity
             with our Todo App.
-          </p>cursor-pointer 
+          </p>
 
           <div className="space-x-4">
             <button className="bg-black text-white px-6 py-3 rounded-lg  ">
