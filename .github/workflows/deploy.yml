@@ -1,0 +1,46 @@
+name: Deploy MERN App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+
+          script: |
+            cd /home/ubuntu/projects/Mern
+
+            echo "Pull latest code..."
+            git pull origin main
+
+            echo "Backend..."
+            cd backend
+            npm install
+            pm2 restart backend
+
+            echo "Frontend..."
+            cd ../my-app
+            npm install
+            npm run build
+
+            echo "Update Nginx files..."
+            sudo rm -rf /var/www/myapp/*
+            sudo cp -r dist/* /var/www/myapp/
+
+            echo "Restart Nginx..."
+            sudo systemctl restart nginx
+
+            echo "Deployment Successful!"
