@@ -86,7 +86,7 @@ function Home() {
             <p>Protected with JWT Authentication.</p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow hover:bg-blue-200">
-            <h2 className="text-xl font-semibold mb-2">AWS Deployment</h2>
+            <h2 className="text-xl font-semibold mb-2">AWS &&&& Deployment</h2>
             <p>CI/CD Integrated</p>
           </div>
         </section>

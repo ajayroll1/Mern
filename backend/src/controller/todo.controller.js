@@ -90,7 +90,7 @@ export const updateTodo = async (req, res) => {
     const updatedTodo = await Todo.findByIdAndUpdate(
       id,
       { task ,isCompleted },
-      { returnDocument: "after" }
+      { returnDocument: "after" }                                                                                                                               
     );
 
     return res.status(200).json({
